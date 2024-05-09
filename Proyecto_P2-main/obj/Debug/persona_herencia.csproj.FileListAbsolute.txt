@@ -1,0 +1,12 @@
+C:\Users\Licenciaturas\Downloads\Proyecto_P2-main\obj\Debug\persona_herencia.csproj.AssemblyReference.cache
+C:\Users\Licenciaturas\Downloads\Proyecto_P2-main\obj\Debug\persona_herencia.Form1.resources
+C:\Users\Licenciaturas\Downloads\Proyecto_P2-main\obj\Debug\persona_herencia.csproj.GenerateResource.cache
+E:\POO2\Proyecto_P2-main\bin\Debug\persona_herencia.exe.config
+E:\POO2\Proyecto_P2-main\bin\Debug\persona_herencia.exe
+E:\POO2\Proyecto_P2-main\bin\Debug\persona_herencia.pdb
+E:\POO2\Proyecto_P2-main\obj\Debug\persona_herencia.csproj.AssemblyReference.cache
+E:\POO2\Proyecto_P2-main\obj\Debug\persona_herencia.Form1.resources
+E:\POO2\Proyecto_P2-main\obj\Debug\persona_herencia.csproj.GenerateResource.cache
+E:\POO2\Proyecto_P2-main\obj\Debug\persona_herencia.csproj.CoreCompileInputs.cache
+E:\POO2\Proyecto_P2-main\obj\Debug\persona_herencia.exe
+E:\POO2\Proyecto_P2-main\obj\Debug\persona_herencia.pdb
