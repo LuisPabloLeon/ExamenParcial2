@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,18 +22,24 @@ namespace persona_herencia
 
         private void guardar_Click(object sender, EventArgs e)
         {
-            //condicional que comprueba que las cajas de texto contangan escrito algo
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+            if (radioalumno.Checked)
             {
-                MessageBox.Show("No ha terminado de llenar la informacion");
+                MessageBox.Show("DATOS GUARDOS" + "\nNombre: " + textBox1.Text + "\nFecha de Nac: " + textBox2.Text
+                + "\nEdad: " + textBox3.Text + "\nMatricula: " + textBox4.Text + "\nCarrera: " + textBox5.Text);
             }
             else
             {
-                MessageBox.Show("Tus datos han sido guardados :D");
-            }// esto se hace de tarea todos los valores
-            // deben de almacenarse en su
-            // caja de memoria correspondiente
-            // usando la clase hija que corresponda
+                if (radiodocente.Checked || radioempleado.Checked)
+                {
+                    MessageBox.Show("DATOS GUARDOS" + "\nNombre: " + textBox1.Text + "\nFecha de Nac: " + textBox2.Text
+              + "\nEdad: " + textBox3.Text + "\nDNI: " + textBox4.Text + "\nPuesto: " + textBox5.Text + "\nSueldo: " + textBox6.Text);
+                }
+                else
+                {
+                    MessageBox.Show("DATOS GUARDOS" + "\nNombre: " + textBox1.Text + "\nFecha de Nac: " + textBox2.Text
+               + "\nEdad: " + textBox3.Text);
+                }
+            }
         }
 
         private void limpiar_Click(object sender, EventArgs e)
@@ -55,24 +61,109 @@ namespace persona_herencia
             // debe de terminar la ejecucion de la interfaz
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void validar_Click(object sender, EventArgs e)
         {
+            if (radioalumno.Checked)
+            {
 
+                string nom = textBox1.Text;
+                string fech = textBox2.Text;
+                int edad = Convert.ToInt32(textBox3.Text);
+                int mat = Convert.ToInt32(textBox4.Text);
+                string carrera = textBox5.Text;
+                Alumno alumno = new Alumno(nom, edad, fech, carrera, mat);
+            }
+            else
+            {
+                if (radioempleado.Checked)
+                {
+
+                    string nom = textBox1.Text;
+                    string fech = textBox2.Text;
+                    int edad = Convert.ToInt32(textBox3.Text);
+                    int mat = Convert.ToInt32(textBox4.Text);
+                    string puesto = textBox5.Text;
+                    float sueldo = Convert.ToSingle(textBox6.Text);
+                    Empleado empleado = new Empleado(nom, edad, fech, puesto, sueldo);
+                }
+                else if (radiodocente.Checked)
+                {
+                    string nom = textBox1.Text;
+                    string fech = textBox2.Text;
+                    int edad = Convert.ToInt32(textBox3.Text);
+                    int mat = Convert.ToInt32(textBox4.Text);
+                    string puesto = textBox5.Text;
+                    float sueldo = Convert.ToSingle(textBox6.Text);
+                    Docente docente = new Docente(nom, edad, fech, puesto, sueldo);
+                }
+                else
+                {
+                    string nom = textBox1.Text;
+                    string fech = textBox2.Text;
+                    int edad = Convert.ToInt32(textBox3.Text);
+                }
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void radioalumno_CheckedChanged(object sender, EventArgs e)
         {
-
+            string rutaImagen = "E:\\POO2\\Proyecto_P2-main\\Imagenes\\Alumno.jpg";
+            pictureBox1.BackgroundImage = Image.FromFile(rutaImagen);
+            label6.Visible = false;
+            textBox6.Visible = false;
+            if (label4.Visible == false && textBox4.Visible == false && label5.Visible == false && textBox5.Visible == false) //comprobar que los label y textbox estem
+                                                                                                                             //apagados o prendidos
+            {
+                label4.Visible = true;
+                textBox4.Visible = true;
+                label5.Visible = true;
+                textBox5.Visible = true;
+            }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            string rutaImagen = "E:\\POO2\\Proyecto_P2-main\\Imagenes\\Persona.png";
+            pictureBox1.BackgroundImage = Image.FromFile(rutaImagen);
+            label4.Visible = false;
+            textBox4.Visible = false;
+            label5.Visible = false;
+            textBox5.Visible = false;
+            label6.Visible = false;
+            textBox6.Visible = false;
+        }
 
+        private void radioempleado_CheckedChanged(object sender, EventArgs e)
+        {
+            string rutaImagen = "E:\\POO2\\Proyecto_P2-main\\Imagenes\\Empleado.jpg";
+            pictureBox1.BackgroundImage = Image.FromFile(rutaImagen);
+            label4.Visible = true;
+            textBox4.Visible = true;
+            label5.Visible = true;
+            textBox5.Visible = true;
+            label6.Visible = true;
+            textBox6.Visible = true;
+        }
+
+        private void radiodocente_CheckedChanged(object sender, EventArgs e)
+        {
+            string rutaImagen = "E:\\POO2\\Proyecto_P2-main\\Imagenes\\Maestro.jpg";
+            pictureBox1.BackgroundImage = Image.FromFile(rutaImagen);
+            label4.Visible = true;
+            textBox4.Visible = true;
+            label5.Visible = true;
+            textBox5.Visible = true;
+            label6.Visible = true;
+            textBox6.Visible = true;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string rutaImagen = "E:\\POO2\\Proyecto_P2-main\\Imagenes\\ImagenBienvenida.png";
+            pictureBox1.BackgroundImage = Image.FromFile(rutaImagen);
+            radioalumno.Checked = false;
+            radioButton1.Checked = false;
+            radiodocente.Checked = false;
+            radioempleado.Checked = false;
         }
     }
 }
