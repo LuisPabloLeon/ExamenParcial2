@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,82 +8,114 @@ namespace persona_herencia
 {
     class Persona //clase padre
     {
-        protected string NombreCompleto;
-        protected string FechaN;
-        protected int Edad;
-        protected int DNI_Matricula;
-        protected string Carrera_Puesto;
+        //cuando una persona se crea desde 0 unicamente tiene
+        protected int edad; //caja que guarda edad
+        protected string nombre;//caja que guarda nombre
+        protected string fechanac;//caja que guarda fecha de nacimiento
 
-        public string nombrecompleto //Caja de memoria
+        public int Edad //CAJA DE MEMORIA edad
         {
-            get { return NombreCompleto; }
-            set { NombreCompleto = value; }
+            get { return edad; } //vamos por el valor
+                                 //de la caja de texto
+            set { edad = value; }//lo guardamos en memoria
         }
-        public string fechan //caja de memoria
+        public string Fechanac //CAJA DE MEMORIA fechanacimiento
         {
-            get { return FechaN; }
-            set { FechaN = value; }
+            get { return fechanac; } //vamos por el valor
+                                     //de la caja de texto
+            set { fechanac = value; }//lo guardamos en memoria
         }
-        public int edad //caja de memoria
+        public string Nombre //CAJA DE MEMORIA nombre
         {
-            get { return Edad; }
-            set { Edad = value; }
+            get { return nombre; } //vamos por el valor
+                                   //de la caja de texto
+            set { nombre = value; }//lo guardamos en memoria
         }
-        public int dni_matricula //caja de memoria
-        {
-            get { return DNI_Matricula; }
-            set { DNI_Matricula = value; }
-        }
-        public string carrera_Puesto //Caja de memoria
-        {
-            get { return Carrera_Puesto; }
-            set { Carrera_Puesto = value; }
-        }
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
-        //aqui va el constructor para cargar datos en las cajas de memoria
-        //nombre, edad, fecha de nacimiento(es un tipo cadena!!!!! string)
+        //constructor de estructura persona
+        /* public Persona (string nombre, int edad, string fechanac)
+         {
+             Nombre = nombre;
+             Edad = edad;
+             Fechanac = fechanac;
+         }*/
     }
 
     class Alumno :Persona //clase hija alumno
     {
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
+        protected int matricula;
+        protected string carrera;
+        public int Matricula //CAJA DE MEMORIA edad
+        {
+            get { return matricula; } //vamos por el valor
+                                      //de la caja de texto
+            set { matricula = value; }//lo guardamos en memoria
+        }
+        public string Carrera //CAJA DE MEMORIA fechanacimiento
+        {
+            get { return carrera; } //vamos por el valor
+                                    //de la caja de texto
+            set { carrera = value; }//lo guardamos en memoria
+        }
+        public Alumno(string nombre, int edad, string fechanac, string carrera, int matricula)
+        {
+            Nombre = nombre;
+            Edad = edad;
+            Fechanac = fechanac;
+            Carrera = carrera;
+            Matricula = matricula;
+        }
     }
     class Empleado : Persona //clase hija
     {
-        protected int Sueldo;
-        public int sueldo//caja de memoria
+        protected float sueldo;
+        protected string puesto;
+        public float Sueldo //CAJA DE MEMORIA edad
         {
-            get { return Sueldo; }
-            set { Sueldo = value; }
+            get { return sueldo; } //vamos por el valor
+                                   //de la caja de texto
+            set { sueldo = value; }//lo guardamos en memoria
         }
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
+        public string Puesto //CAJA DE MEMORIA fechanacimiento
+        {
+            get { return puesto; } //vamos por el valor
+                                   //de la caja de texto
+            set { puesto = value; }//lo guardamos en memoria
+        }
+
+        public Empleado(string nombre, int edad, string fechanac, string puesto, float sueldo)
+        {
+            Nombre = nombre;
+            Edad = edad;
+            Fechanac = fechanac;
+            Puesto = puesto;
+            Sueldo = sueldo;
+        }
     }
 
     class Docente : Persona //clase Hija
     {
-        protected int Sueldo;
-        public int sueldo//caja de memoria
+        protected float sueldo;
+        protected string puesto;
+        public float Sueldo //CAJA DE MEMORIA edad
         {
-            get { return Sueldo; }
-            set { Sueldo = value; }
+            get { return sueldo; } //vamos por el valor
+                                   //de la caja de texto
+            set { sueldo = value; }//lo guardamos en memoria
         }
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
+        public string Puesto //CAJA DE MEMORIA fechanacimiento
+        {
+            get { return puesto; } //vamos por el valor
+                                   //de la caja de texto
+            set { puesto = value; }//lo guardamos en memoria
+        }
+        public Docente(string nombre, int edad, string fechanac, string puesto, float sueldo)
+        {
+            Nombre = nombre;
+            Edad = edad;
+            Fechanac = fechanac;
+            Puesto = puesto;
+            Sueldo = sueldo;
+        }
     }
     static class Program
     {
